@@ -1,5 +1,4 @@
-from task_4.command_handler import start, add_contact, change_contact, show_contact, show_all_contacts, \
-    close_contact
+from task_4.command_handler import start, add_contact, change_contact, show_contact, show_all_contacts
 from task_4.menu import bot_menu
 
 
@@ -19,17 +18,20 @@ def main():
 
         match command:
             case 'start':
+                print('Hello! How can I help you?')
                 start()
             case 'add':
                 add_contact(contacts, args)
+                print('Contact added')
             case 'change':
                 change_contact(contacts, args)
-            case 'show':
-                show_contact(contacts, args)
+                print('Contact updated')
+            case 'phone':
+                print(show_contact(contacts, args))
             case 'all':
-                show_all_contacts(contacts)
+                print(show_all_contacts(contacts))
             case 'exit':
-                close_contact()
+                print('Goodbye!')
                 break
             case _:
                 print(f'Unknown command: {command}')

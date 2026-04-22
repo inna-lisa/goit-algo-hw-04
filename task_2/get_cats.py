@@ -7,7 +7,7 @@ def get_cats_info(path):
             if len(parts) != 3:
                 continue
             try:
-                cat = {'id': parts[0], 'name': parts[1], 'age': int(parts[2])}
+                cat = {'id': parts[0], 'name': parts[1], 'age': parts[2]}
                 cats.append(cat)
             except ValueError:
                 continue
