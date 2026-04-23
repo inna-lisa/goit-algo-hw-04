@@ -1,4 +1,4 @@
-from task_4.command_handler import start, add_contact, change_contact, show_contact, show_all_contacts
+from task_4.command_handler import add_contact, change_contact, show_contact, show_all_contacts
 from task_4.menu import bot_menu
 
 
@@ -10,7 +10,7 @@ def parse_input(user_input):
 
 def main():
     contacts = {}
-    bot_menu()
+    print(bot_menu())
 
     while True:
         user_input = input('Enter a command: ')
@@ -19,13 +19,10 @@ def main():
         match command:
             case 'start':
                 print('Hello! How can I help you?')
-                start()
             case 'add':
-                add_contact(contacts, args)
-                print('Contact added')
+                print(add_contact(contacts, args))
             case 'change':
-                change_contact(contacts, args)
-                print('Contact updated')
+                print(change_contact(contacts, args))
             case 'phone':
                 print(show_contact(contacts, args))
             case 'all':

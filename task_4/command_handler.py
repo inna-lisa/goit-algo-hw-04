@@ -1,30 +1,23 @@
-from task_4.menu import bot_menu
-
-
-def start():
-    bot_menu()
-
-
 def add_contact(contacts, args):
     if len(args) < 2:
-        print('Incorrect command')
-        return
+        return 'Incorrect command'
 
     if args[0] in contacts:
-        print(f'Contact already exists. Contact name will be: {args[0] + '1'}')
         contacts[args[0] + '1'] = args[1]
+        return f'Contact name is already exists. New contact name will be: {args[0] + '1'}'
     else:
         contacts[args[0]] = args[1]
+        return 'Contact added'
 
 
 def change_contact(contacts, args):
     if len(args) < 2:
-        print('Incorrect command')
-        return
+        return 'Incorrect command'
     if args[0] in contacts:
         contacts[args[0]] = args[1]
+        return 'Contact updated'
     else:
-        print('Contact not found')
+        return 'Contact not found'
 
 
 def show_contact(contacts, args):
